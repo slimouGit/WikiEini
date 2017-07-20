@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="wikiEini">
+<head>
+    <title>Wiki-Eini</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport"           content="width=device-width, initial-scale=1">
+    <meta name="content-language"   content="de" />
+    <meta name="author"             content="Salim Oussayfi" />
+    <meta name="description"        content="Projekt Seminar Rich-Media-Anwendungen Beuth-Hochschule WS 2016" />
+
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <!--IMPORTE-->
+    <!-- configurationApp beinhaltet alle initialisierten Variablen -->
+    <script src="lib/configurationApp.js"></script>
+    <!-- Bootstrap -->
+    <link href="lib/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- AngulkarJS -->
+    <script src="lib/AngularJS/angular.js"></script>
+    <script src="lib/AngularJS/ui-bootstrap-tpls-0.13.4.min.js"></script>
+    <!--Routing-->
+    <script src="lib/AngularJS/route.js"></script>
+    <!--Sanitize - ermoeglicht, dass HTML-Code von fremder Quelle abgefragt werden -->
+    <script src="lib/AngularJS/sanitize.js"></script>
+    <!--wikiApp.js-->
+    <script src="lib/wikiApp.js"></script>
+    <!--canvasApp.js-->
+    <script src="lib/canvasApp.js"></script>
+    <!--progressbarApp.js-->
+    <script src="lib/progressbarApp.js"></script>
+    <!-- Bootstrap icons -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--Sonic fuer Preloader -->
+    <script src="lib/sonic.js"></script>
+    <!--Script fuer Sprachwahl ueber select-->
+    <script src="lib/selectOptionsApp.js"></script>
+</head>
+
+<body onscroll="scrollFunction()">
+<!-- Return to Top -->
+<a href="javascript:" id="return-to-top"><img src="img/arrowToTop.png"></a>
+
+<nav id="navbar" class="navbar navbar-inverse fixedNav blackGradient" ng-controller="NavigationController">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand" ng-click="startClick()">Wiki-Eini</a>
+        </div>
+    </div>
+</nav>
+
+<div class="main-container">
+
+    <div class="container-fluid content" ng-controller="IconController">
+        <!--Icon zum wechseln der Sprache-->
+        <div id="languageIcon"><img src="img/languageIcon.png"></div>
+        <!--Icon zum anzeigen des Formulars-->
+        <div id="formularIcon" ng-click="openForm()">  <img src="img/searchIcon.png"></div>
+        <!--Icon zum ausblenden des Characters-->
+        <div id="einiIcon"><img src="img/disableEini.png">.</div>
+
+        <div class="row" >
+            <div class="col-md-6" id="contentView">
+                <!-- Container fuer Routing -->
+                <div class="resultContainer" id="viewContainer" ng-view></div>
+            </div>
+            <!-- Container fuer das Canvas -->
+            <div id="canvasContainer" ng-controller="CanvasController">
+                <div id="preloader"></div>
+                <canvas id="canvas" width="300" height="200">
+                    Your browser does not support the HTML 5 Canvas.
+                </canvas>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script src="lib/Bootstrap/js/jquery3.js"></script>
+<script src="lib/Bootstrap/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.12.2.min.js"><\/script>');</script>
+
+<!--animateApp.js-->
+<script src="lib/animateApp.js"></script>
+
+</html>

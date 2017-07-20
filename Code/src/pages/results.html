@@ -1,0 +1,49 @@
+<div id="formular">
+    
+    <!-- Teaser in jeweiliger Sprache   -->
+    <h1>{{ask}} Wiki-Eini</h1>
+    <p>{{question}}</p>
+    
+    <!-- Input inkl. typeahead values fuer Autovervollstaendigung -->
+    <div class="form-group">
+        <input type="text" id="searchInput" ng-model="search" typeahead="item.Title for item in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-min-length="2" typeahead-wait-ms="100">
+    </div>
+
+    <button ng-if="search.length != 0" ng-click="searchClick(search)" id="searchButton" class="btn btn-primary" >{{buttonTxT}}</button>
+    <br>
+    
+    <!-- Statusmeldungen -->
+    <div id="changeLanguageText" class="stateReport">{{alertTxT}}</div>
+    <div id="noMatch" class="stateReport">{{noResults}}</div>
+
+    <hr>
+
+    <!-- Ladebalken -->
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+</div>
+
+<!-- Sprachwechselfeld (Directive) -->
+<div id="changeLanguage" >
+    <form-group>
+        <select class="form-control" onChange="javascript:changeLocation(this)" >
+            <option selected>{{selectLanguage}}</option>
+            <option ng-repeat="(key, endpoint) in endpoints" value="#/results/{{key}}" class="form-group-item" >{{endpoint.title}}
+            </option>
+          </select>
+    </form-group>
+</div>
+
+<!-- Anzeige der Ergebnisse (Directive) -->
+<div id="ergebnis">
+    <div id="formularIcon" ng-click="resetForm()"><img src="../img/searchIcon.png"></div>
+    <div ng-repeat="result in results">
+        <panel title="{{result.title}}" >
+            <div ng-bind-html="result.extract"></div>
+            <img src="img/arrowToTarget.jpg" class="arrowImg"><a class="linkToTarget" href="https://{{domain}}.wikipedia.org/wiki/{{result.title}}" target="_blank">{{result.title}}</a>
+        </panel>
+    </div>
+</div>
+
+

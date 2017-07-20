@@ -1,0 +1,12 @@
+<h1>Willkommen<br>beim Wiki-Eini</h1>
+<p>Bitte wähle eine Sprache aus</p>
+
+<!-- Verfuegbare Sprachen (Directive) -->
+<list-group>
+            <ul class="list-group">
+                <!-- ueber alle endpoints iterieren-->
+                <li ng-repeat="(key, endpoint) in endpoints" class="list-group-item">
+                    <a href="#/results/{{key}}"><img src="{{ endpoint.src }}"/> - {{endpoint.title}}</a>
+                </li>
+            </ul>
+</list-group>

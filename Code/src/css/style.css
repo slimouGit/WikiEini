@@ -1,0 +1,376 @@
+body{
+    background: #fff ;
+    background-image: url("../img/formelBck.jpg");
+    }
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Schrift & Links*/
+
+
+h3{font-size: 30px; font-weight: 400;text-align: center;margin-top: 50px;}
+h1 {font-family:times, serif; color:#112d47;margin-bottom:0px;}
+p {font-family: 'Open Sans', sans-serif;color:#111}
+b{color:#204c73}
+
+a:link {color: #204c73;}
+a:visited {color: #204c73;}
+a:hover {color: #204c73;}
+a:active {color: #204c73;}
+
+
+
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Statusmeldungen nach Suche ueber Sprachwechsel*/
+
+#noMatch{
+   background-color:#882300;
+}
+
+#changeLanguageText{
+   background-color:#1e405e;
+}
+
+.stateReport{
+    white-space: nowrap;
+        vertical-align: center;
+        position: absolute;
+        text-align: right;
+        padding: 5px 20px;
+        color: white;
+        margin:0px
+        z-index: 4999;
+        color: white;
+        top:100px;
+        left: -300px;
+        height:30px;
+        width:300px;
+        opacity: 0;
+        box-shadow: -2px 2px 5px #000;
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Navigation*/
+.fixedNav{
+    z-index:1000;
+    top:0px;
+    position: fixed;
+    width: 100%;
+    border-radius: 0;
+    height:50px;
+}
+
+.navbar{
+    z-index:1000;
+    box-shadow: -2px 2px 5px #000;
+}
+
+.blackGradient {
+    background: -webkit-repeating-linear-gradient(-45deg, rgba(140,140,140,.1), rgba(255,255,255,0) 12px), -webkit-linear-gradient(#636363, #0e0e0e);
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Icons*/
+
+/*Icon blendet die Farbauswahl ein*/
+#languageIcon{
+    position: fixed;
+    z-index: 50;
+    opacity: 0.0;
+    top: 0px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius:5px;
+    box-shadow: 2px 2px 2px #000;
+}
+
+/*Icon fuer neue Suche/Panel einblenden*/
+#formularIcon{
+    position: fixed;
+    z-index:50;
+    opacity: 0.0;
+    top:0px;
+    left:75px;
+    border-radius:5px;
+    box-shadow: 2px 2px 2px #000;
+}
+
+/*Icon, um Character auszublenden*/
+#einiIcon{
+    position: fixed;
+    z-index: 50;
+    opacity: 0.0;
+    top: 0px;
+    left: 130px;
+    width: 50px;
+    height: 50px;
+    border-radius:5px;
+    box-shadow: 2px 2px 2px #000;
+}
+
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Sprachwahl*/
+#changeLanguage{
+    position: fixed;
+    padding:20px 25px 25px 20px;
+    background: rgba(30, 64, 94, 0.7);
+    bottom: -5px;
+    right: -300px;
+    border-top-left-radius:5px;
+    box-shadow: -2px -2px 2px #000;
+    z-index: 2000;
+    opacity:0.0;
+}
+
+.changeLanguageText{
+    font-weight:bold;
+    color:red;
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+.content {
+	margin-top: 40px;
+	padding-bottom:80px;
+}
+
+#contentView{
+    top: 0px;
+}
+
+#formular {
+    z-index:20;
+    display: block;
+    top:50px;
+    height:100%;
+    width:100%;
+    padding: 0px 0px;
+    overflow: initial;
+}
+
+#preloader{
+    position: fixed;
+    z-index:1000;
+    top: 10px;
+    padding:20px 0px 0px 20px;
+}
+
+#canvas {
+   	position: fixed;
+    z-index:1000;
+    top: 10px;
+    display:none;
+}
+
+label {display:block}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #000;
+    box-shadow: -2px 2px 5px #ccc inset;
+    padding-left:5px;
+}
+
+hr{
+    border: 1px solid #c28c04;
+    margin: 10px 0px;
+}
+
+#ergebnis {
+    position:absolute;
+    padding: 30px 15px 80px 0px;
+}
+
+/*Pfeil als Bullet vor Link zum Wikipedia-Eintrag*/
+.arrowImg{
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*mediaquerries*/
+
+@media screen and (min-width: 300px) {
+    h1{margin-right: 35%; font-size: 30px;}
+    #canvas {left: 50%;}
+    #preloader{left: 50%;}
+    #einiIcon{visibility:visible;}
+    #myBar {height: 50%;}
+}
+
+@media screen and (min-width: 700px) {
+    #viewContainer{width:100%}
+    h1{font-size: 40px;}
+    #canvas {left: 50%;}
+    #preloader{left: 50%;}
+    #einiIcon{visibility:visible;}
+    #myBar {height: 75%;}
+}
+
+@media screen and (min-width: 950px) {
+    h1{font-size: 45px;}
+    #canvas {left: 45%;}
+    #preloader{left: 45%;}
+    #einiIcon{visibility:hidden;}
+    #myBar {height: 100%;}
+}
+
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Button*/
+.btn-primary {
+    background-color: black;
+}
+
+.btn-primary:focus, .btn-primary:active, .btn-primary.active {
+    background-color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #c28c04;
+}
+
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Sprachwahl bei Systemstart + Links*/
+.list-group{
+    box-shadow: -2px 2px 5px #ccc;
+}
+
+.list-group a{
+    color: #000;
+    text-decoration: none;
+}
+
+.list-group-item {
+    font-size: 1.5em;
+}
+
+a.linkDisabled {
+   pointer-events: none;
+   cursor: default;
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Panel*/
+.panel {
+    border: 1px solid #000;
+    box-shadow: 2px 2px 5px #bbb;
+}
+
+#panel {
+    left:-300px;
+}
+
+.panel-title {
+    color: white;
+    text-align: left;
+
+}
+
+.panel-heading {
+    background: -webkit-repeating-linear-gradient(-45deg, rgba(140,140,140,.1), rgba(255,255,255,0) 12px), -webkit-linear-gradient(#1e405e, #0c2236);
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Progressbar*/
+#myProgress {
+  position: relative;
+  width: 0%;
+  height: 0px;
+  background-color: #fff;
+  margin-bottom:10px;
+}
+
+#myBar {
+  position: absolute;
+  width: 0%;
+  background-color: #000;
+  border-radius: 3px;
+  background: -webkit-repeating-linear-gradient(-45deg, rgba(255,255,255,.1), rgba(255,255,255,0) 12px), -webkit-linear-gradient(#e6aa07, #a77201);
+}
+/*-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------*/
+/*Return to top*/
+#return-to-top {
+    position: fixed;
+    z-index: 40;
+    bottom: 20px;
+    left: 20px;
+    background: rgb(30, 64, 94);
+    background: rgba(30, 64, 94, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 5px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+    background: rgba(30, 64, 94, 0.9);
+}
+
+#return-to-top:hover img {
+    color: #fff;
+    top: 5px;
+}
+/*-----------------------------------------------------------------------*/
